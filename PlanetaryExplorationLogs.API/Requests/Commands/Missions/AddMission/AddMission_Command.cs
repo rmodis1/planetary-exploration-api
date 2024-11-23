@@ -23,7 +23,7 @@ public class AddMission_Command : RequestBase<int>
         new AddMission_Validator(DbContext, _someInputParameter);
 
     // The handler is mandatory to have for every command
-    public override IHandler<returntype> Handler =>
+    public override IHandler<int> Handler =>
         new AddMission_Handler (DbContext, _someInputParameter);
 }
 

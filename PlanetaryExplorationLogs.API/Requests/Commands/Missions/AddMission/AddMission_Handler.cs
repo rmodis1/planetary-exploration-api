@@ -1,5 +1,9 @@
 // The handler class is responsible for executing the query
-public class AddMission_Handler : HandlerBase<returntype>
+using PlanetaryExplorationLogs.API.Data.Context;
+using PlanetaryExplorationLogs.API.Utility.Patterns;
+using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
+
+public class AddMission_Handler : HandlerBase<int>
 {
     private readonly int _someInputParameter;
 
@@ -9,15 +13,14 @@ public class AddMission_Handler : HandlerBase<returntype>
         _someInputParameter = someInputParameter;
     }
 
-    public override async Task<RequestResult<returntype>> HandleAsync()
+    public override async Task<RequestResult<int>> HandleAsync()
     {
         await Task.CompletedTask;
 
-        var mathematical = _someInputParameter * _someInputParameter;
 
-        var result = new RequestResult<returntype>
+        var result = new RequestResult<int>
         {
-            Data = mathematical
+            Data = 5
         };
 
         return result;

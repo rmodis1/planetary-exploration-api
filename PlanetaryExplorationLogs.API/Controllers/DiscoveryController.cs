@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PlanetaryExplorationLogs.API.Data.Context;
+using PlanetaryExplorationLogs.API.Data.DTO;
 using PlanetaryExplorationLogs.API.Data.Models;
 using PlanetaryExplorationLogs.API.Requests._Templates;
 using PlanetaryExplorationLogs.API.Requests.Queries.Discoveries.GetDiscoveryTypes;
@@ -27,11 +28,10 @@ namespace PlanetaryExplorationLogs.API.Controllers
 
         // GET: api/discovery/{id}
         [HttpGet("{id}")]
-        public IActionResult GetDiscovery(int id)
+        public async Task<ActionResult<RequestResult<DiscoveryFormDto>>> GetDiscovery(int id)
         {
-            // Retrieve a specific discovery by ID.
-        
-            return StatusCode(501); // Not Implemented
+            var query = new GetDiscovery_Query(_context, id);
+            return await query.ExecuteAsync();
         }
 
 
@@ -45,7 +45,7 @@ namespace PlanetaryExplorationLogs.API.Controllers
 
         // DELETE: api/discovery/{id}
         [HttpDelete("{id}")]
-        public IActionResult DeleteDiscovery(int id)
+        public async Task<IActionResult<RequestResult<int>>> DeleteDiscovery(int id)
         {
             // Delete a discovery.
             return StatusCode(501); // Not Implemented
