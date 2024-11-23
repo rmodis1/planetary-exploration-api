@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{9C0F4F63-8DBA-451A-9DBF-62F4BCE8BA3D}|https">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PlanetaryExplorationLogs.API/Utility/Snippets/command.snippet">
+    <Files>
+      <File FileName="PlanetaryExplorationLogs.API/Utility/Snippets/command.snippet" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PlanetaryExplorationLogs.API" expanded="True">
+            <Node name="PlanetaryExplorationLogs.API" expanded="True">
+              <Node name="Utility" expanded="True">
+                <Node name="Snippets" expanded="True">
+                  <Node name="command.snippet" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.PlanetaryExplorationLogs.API PreferredExecutionTarget="/Applications/Brave Browser.app" />
+</Properties>
