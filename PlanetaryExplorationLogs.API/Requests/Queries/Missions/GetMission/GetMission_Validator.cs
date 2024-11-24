@@ -19,13 +19,19 @@ public class GetMission_Validator : ValidatorBase
 
     public override async Task<RequestResult> ValidateAsync()
     {
-        // Obviously, this is dummy validation logic. Replace it with your own.
-        await Task.CompletedTask;
-        if (string.IsNullOrEmpty(_missionId))
+
+        if (_missionId < 1)
         {
             return await InvalidResultAsync(
                 HttpStatusCode.BadRequest,
-                "Need to have a value for the filter, apparently.");
+                "You must provide a valid mission id.");
+        }
+
+        if (!DbContext.Missions.Any(m => m.Id == _missionId))
+        {
+            return await InvalidResultAsync(
+                HttpStatusCode.NotFound,
+                $"The mission with the ID {_missionId} does not exist in the database.");
         }
 
         // You can also check things in the database, if needed, such as checking if a record exists
