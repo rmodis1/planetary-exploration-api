@@ -7,20 +7,18 @@ using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
 
 public class GetDiscovery_Handler : HandlerBase<DiscoveryFormDto>
 {
-    private readonly int _id;
+    private readonly int _discoveryId;
 
-    public GetDiscovery_Handler(PlanetExplorationDbContext context, int id)
+    public GetDiscovery_Handler(PlanetExplorationDbContext context, int discoveryId)
         : base(context)
     {
-        _id = id;
+        _discoveryId = discoveryId;
     }
 
     public override async Task<RequestResult<DiscoveryFormDto>> HandleAsync()
     {
-        // Obviously, this is a dummy query. Replace it with your own.
-        // Write your query here
         var discovery = await DbContext.Discoveries
-            .Where(u => u.Id == _id)
+            .Where(u => u.Id == _discoveryId)
             .Select(u => new DiscoveryFormDto
             {
                 Name = u.Name,

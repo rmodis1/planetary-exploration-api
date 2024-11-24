@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PlanetaryExplorationLogs.API.Data.Context;
+using PlanetaryExplorationLogs.API.Data.DTO;
 using PlanetaryExplorationLogs.API.Data.Models;
 using PlanetaryExplorationLogs.API.Requests.Queries.Missions.GetMissions;
 using PlanetaryExplorationLogs.API.Utility.Patterns;
@@ -18,7 +19,7 @@ namespace PlanetaryExplorationLogs.API.Controllers
 
         // GET: api/mission
         [HttpGet]
-        public async Task<ActionResult<RequestResult<List<Mission>>>> GetMissions()
+        public async Task<ActionResult<RequestResult<List<MissionFormDto>>>> GetMissions()
         {
             var query = new GetMissions_Query(_context);
             return await query.ExecuteAsync();
@@ -26,7 +27,7 @@ namespace PlanetaryExplorationLogs.API.Controllers
 
         // GET: api/mission/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<RequestResult<Mission>>> GetMission(int id)
+        public async Task<ActionResult<RequestResult<MissionFormDto>>> GetMission(int id)
         {
             // Retrieve a specific mission by ID.
             return StatusCode(501); // Not Implemented

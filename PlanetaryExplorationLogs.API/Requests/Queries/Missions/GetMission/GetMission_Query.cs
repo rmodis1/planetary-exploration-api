@@ -7,23 +7,22 @@
 
 using PlanetaryExplorationLogs.API.Data.Context;
 using PlanetaryExplorationLogs.API.Data.DTO;
-using PlanetaryExplorationLogs.API.Utility.Patterns;
 using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
 
-public class GetDiscovery_Query : RequestBase<DiscoveryFormDto>
+namespace PlanetaryExplorationLogs.API.Requests.Queries.Missions.GetMission;
+public class GetMission_Query : RequestBase<MissionFormDto>
 {
-    private readonly int _discoveryId;
+    private readonly int _missionId;
 
-    public GetDiscovery_Query(PlanetExplorationDbContext context, int discoveryId)
+    public GetMission_Query(PlanetExplorationDbContext context, int missionId)
         : base(context)
     {
-        _discoveryId = discoveryId;
+        _missionId = missionId;
     }
 
     // The validator is optional and can be removed if not needed
-    public override IValidator Validator => new GetDiscovery_Validator(DbContext, _discoveryId);
+    public override IValidator Validator => new GetMission_Validator(DbContext, _missionId);
 
     // The handler is mandatory to have for every query
-    public override IHandler<DiscoveryFormDto> Handler => new GetDiscovery_Handler(DbContext, _discoveryId);
+    public override IHandler<MissionFormDto> Handler => new GetMission_Handler(DbContext, _missionId);
 }
-
