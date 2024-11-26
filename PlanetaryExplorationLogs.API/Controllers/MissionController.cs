@@ -3,6 +3,7 @@ using PlanetaryExplorationLogs.API.Data.Context;
 using PlanetaryExplorationLogs.API.Data.DTO;
 using PlanetaryExplorationLogs.API.Data.Models;
 using PlanetaryExplorationLogs.API.Requests.Commands.Missions.AddMission;
+using PlanetaryExplorationLogs.API.Requests.Commands.Missions.DeleteMission;
 using PlanetaryExplorationLogs.API.Requests.Commands.Missions.UpdateMission;
 using PlanetaryExplorationLogs.API.Requests.Queries.Missions.GetMission;
 using PlanetaryExplorationLogs.API.Requests.Queries.Missions.GetMissions;
@@ -64,8 +65,8 @@ namespace PlanetaryExplorationLogs.API.Controllers
         [HttpGet("{missionId}/discovery")]
         public async Task<ActionResult<RequestResult<List<Discovery>>>> GetDiscoveriesForMission(int missionId)
         {
-            var query = new GetDiscoveriesForMission_Query(_context, missionId);
-            return await query.ExecuteAsync();
+            // var query = new GetDiscoveriesForMission_Query(_context, missionId);
+            // return await query.ExecuteAsync();
             // Retrieve all discoveries for a specific mission.
             return StatusCode(501); // Not Implemented
         }
@@ -74,8 +75,8 @@ namespace PlanetaryExplorationLogs.API.Controllers
         [HttpPost("{missionId}/discovery")]
         public async Task<ActionResult<RequestResult<int>>> CreateDiscoveryForMission(int missionId, [FromBody] Discovery discovery)
         {
-            var cmd = new AddDiscoveryForMission_Command(_context, missionId, discovery);
-            return await cmd.ExecuteAsync();
+            // var cmd = new AddDiscoveryForMission_Command(_context, missionId, discovery);
+            // return await cmd.ExecuteAsync();
             // Create a new discovery under a specific mission.
             return StatusCode(501); // Not Implemented
         }
