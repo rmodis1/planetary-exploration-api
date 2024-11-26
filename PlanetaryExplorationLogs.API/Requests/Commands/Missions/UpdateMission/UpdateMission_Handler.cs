@@ -1,28 +1,39 @@
 
 // The handler class is responsible for executing the query
+using System.Net;
 using PlanetaryExplorationLogs.API.Data.Context;
+using PlanetaryExplorationLogs.API.Data.Models;
 using PlanetaryExplorationLogs.API.Utility.Patterns;
 using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
 
-public class classname_Handler : HandlerBase<returntype>
-{
-    private readonly int _someInputParameter;
+namespace PlanetaryExplorationLogs.API.Requests.Commands.Missions.UpdateMission;
 
-    public classname_Handler(PlanetExplorationDbContext context, int someInputParameter)
+public class classname_Handler : HandlerBase<int>
+{
+    private readonly Mission _mission;
+
+    public classname_Handler(PlanetExplorationDbContext context, Mission mission)
         : base(context)
     {
-        _someInputParameter = someInputParameter;
+        _mission = mission;
     }
 
-    public override async Task<RequestResult<returntype>> HandleAsync()
+    public override async Task<RequestResult<int>> HandleAsync()
     {
-        await Task.CompletedTask;
-
-        var mathematical = _someInputParameter * _someInputParameter;
-
-        var result = new RequestResult<returntype>
+        var updatedMission = await DbContext.Missions.FindAsync(_mission.Id);
+        if (updatedMission != null)
         {
-            Data = mathematical
+            updatedMission.Name = _mission.Name;
+            updatedMission.Description = _mission.Description;
+            updatedMission.Date = _mission.Date;
+            updatedMission.PlanetId = _mission.PlanetId;
+            await DbContext.SaveChangesAsync();
+        }
+
+        var result = new RequestResult<int>
+        {
+            Data = updatedMission?.Id ?? -1,
+            StatusCode = HttpStatusCode.OK
         };
 
         return result;

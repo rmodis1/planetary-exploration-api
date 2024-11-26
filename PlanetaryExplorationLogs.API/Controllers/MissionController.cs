@@ -3,6 +3,7 @@ using PlanetaryExplorationLogs.API.Data.Context;
 using PlanetaryExplorationLogs.API.Data.DTO;
 using PlanetaryExplorationLogs.API.Data.Models;
 using PlanetaryExplorationLogs.API.Requests.Commands.Missions.AddMission;
+using PlanetaryExplorationLogs.API.Requests.Commands.Missions.UpdateMission;
 using PlanetaryExplorationLogs.API.Requests.Queries.Missions.GetMission;
 using PlanetaryExplorationLogs.API.Requests.Queries.Missions.GetMissions;
 using PlanetaryExplorationLogs.API.Utility.Patterns;
