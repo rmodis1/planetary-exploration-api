@@ -1,9 +1,10 @@
-// The validator class is responsible for validating things before the query is executed
 using System.Net;
 using Microsoft.EntityFrameworkCore;
 using PlanetaryExplorationLogs.API.Data.Context;
 using PlanetaryExplorationLogs.API.Utility.Patterns;
 using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
+
+namespace PlanetaryExplorationLogs.API.Requests.Queries.Discoveries.GetDiscovery;
 
 public class GetDiscovery_Validator : ValidatorBase
 {

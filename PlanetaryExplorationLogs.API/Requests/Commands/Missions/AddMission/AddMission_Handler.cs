@@ -1,4 +1,3 @@
-// The handler class is responsible for executing the query
 using System.Net;
 using PlanetaryExplorationLogs.API.Data.Context;
 using PlanetaryExplorationLogs.API.Data.DTO;

@@ -1,15 +1,8 @@
-//// Paste these using statements at the top of the file and uncomment them
-//using Microsoft.EntityFrameworkCore;
-//using PlanetaryExplorationLogs.API.Utility.Patterns;
-//using System.Net;
-//using PlanetaryExplorationLogs.API.Data.Context;
-//using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
-
 using PlanetaryExplorationLogs.API.Data.Context;
 using PlanetaryExplorationLogs.API.Data.DTO;
-using PlanetaryExplorationLogs.API.Utility.Patterns;
 using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
 
+namespace PlanetaryExplorationLogs.API.Requests.Queries.Discoveries.GetDiscovery;
 public class GetDiscovery_Query : RequestBase<DiscoveryFormDto>
 {
     private readonly int _discoveryId;

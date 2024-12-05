@@ -1,9 +1,3 @@
-//// Paste these using statements at the top of the file and uncomment them
-//using PlanetaryExplorationLogs.API.Data.Context;
-//using PlanetaryExplorationLogs.API.Utility.Patterns;
-//using System.Net;
-//using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
-
 using PlanetaryExplorationLogs.API.Data.Context;
 using PlanetaryExplorationLogs.API.Data.DTO;
 using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;

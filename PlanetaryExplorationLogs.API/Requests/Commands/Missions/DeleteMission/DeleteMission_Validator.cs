@@ -8,7 +8,6 @@ using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
 
 namespace PlanetaryExplorationLogs.API.Requests.Commands.Missions.DeleteMission;
 
-// The validator class is responsible for validating things before the query is executed
 public class DeleteMission_Validator : ValidatorBase
 {
     private readonly int _missionId;

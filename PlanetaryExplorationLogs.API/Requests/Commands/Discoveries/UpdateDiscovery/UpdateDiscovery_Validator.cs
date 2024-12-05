@@ -1,7 +1,6 @@
-// The validator class is responsible for validating things before the query is executed
 using System.Net;
 using PlanetaryExplorationLogs.API.Data.Context;
-using PlanetaryExplorationLogs.API.Data.Models;
+using PlanetaryExplorationLogs.API.Data.DTO;
 using PlanetaryExplorationLogs.API.Utility.Patterns;
 using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
 
@@ -9,9 +8,9 @@ namespace PlanetaryExplorationLogs.API.Requests.Commands.Discoveries.UpdateDisco
 
 public class UpdateDiscovery_Validator : ValidatorBase
 {
-    private readonly Discovery _discovery;
+    private readonly DiscoveryFormDto _discovery;
 
-    public UpdateDiscovery_Validator(PlanetExplorationDbContext context, Discovery discovery)
+    public UpdateDiscovery_Validator(PlanetExplorationDbContext context, DiscoveryFormDto discovery)
         : base(context)
     {
         _discovery = discovery;

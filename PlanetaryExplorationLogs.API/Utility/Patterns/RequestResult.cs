@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using PlanetaryExplorationLogs.API.Data.DTO;
 
 namespace PlanetaryExplorationLogs.API.Utility.Patterns
 {
@@ -8,6 +9,11 @@ namespace PlanetaryExplorationLogs.API.Utility.Patterns
         public string Message { get; set; } = "";
         public HttpStatusCode StatusCode { get; set; } = HttpStatusCode.OK;
         public T? Data { get; set; }
+
+        public static implicit operator RequestResult<T>(RequestResult<List<MissionFormDto>> v)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class RequestResult

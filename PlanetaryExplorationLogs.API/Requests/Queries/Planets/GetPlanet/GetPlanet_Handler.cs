@@ -1,9 +1,10 @@
-// The handler class is responsible for executing the query
 using Microsoft.EntityFrameworkCore;
 using PlanetaryExplorationLogs.API.Data.Context;
 using PlanetaryExplorationLogs.API.Data.Models;
 using PlanetaryExplorationLogs.API.Utility.Patterns;
 using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
+
+namespace PlanetaryExplorationLogs.API.Requests.Queries.Planets.GetPlanet;
 
 public class GetPlanet_Handler : HandlerBase<Planet>
 {

@@ -1,11 +1,11 @@
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using PlanetaryExplorationLogs.API.Data.Models;
 
 namespace PlanetaryExplorationLogs.API.Data.DTO
 {
-    public class MissionFormDto
+    public class MissionDto
     {    
+        [Key]
+        public int Id { get; set; }
         [Required]
         [StringLength(150)]
         public string Name { get; set; } = "";
@@ -18,10 +18,5 @@ namespace PlanetaryExplorationLogs.API.Data.DTO
 
         [StringLength(500)]
         public string Description { get; set; } = "";
-
-        // [ForeignKey("PlanetId")]
-        // public virtual Planet Planet { get; set; } = null!;
-
-        // public virtual List<Discovery> Discoveries { get; set; } = [];
     }
 }

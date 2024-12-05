@@ -3,6 +3,7 @@ using PlanetaryExplorationLogs.API.Data.Context;
 using PlanetaryExplorationLogs.API.Data.DTO;
 using PlanetaryExplorationLogs.API.Data.Models;
 using PlanetaryExplorationLogs.API.Requests.Commands.Missions.AddMission;
+using PlanetaryExplorationLogs.API.Requests.Commands.Missions.CreateDiscoveryForMission;
 using PlanetaryExplorationLogs.API.Requests.Commands.Missions.DeleteMission;
 using PlanetaryExplorationLogs.API.Requests.Commands.Missions.UpdateMission;
 using PlanetaryExplorationLogs.API.Requests.Queries.Missions.GetDiscoveriesForMission;
@@ -24,7 +25,7 @@ namespace PlanetaryExplorationLogs.API.Controllers
 
         // GET: api/mission
         [HttpGet]
-        public async Task<ActionResult<RequestResult<List<MissionFormDto>>>> GetMissions()
+        public async Task<ActionResult<RequestResult<List<Mission>>>> GetMissions()
         {
             var query = new GetMissions_Query(_context);
             return await query.ExecuteAsync();
@@ -32,7 +33,7 @@ namespace PlanetaryExplorationLogs.API.Controllers
 
         // GET: api/mission/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<RequestResult<MissionFormDto>>> GetMission(int id)
+        public async Task<ActionResult<RequestResult<Mission>>> GetMission(int id)
         {
             var query = new GetMission_Query(_context, id);
             return await query.ExecuteAsync();
@@ -48,7 +49,7 @@ namespace PlanetaryExplorationLogs.API.Controllers
 
         // PUT: api/mission
         [HttpPut]
-        public async Task<ActionResult<RequestResult<int>>> UpdateMission([FromBody] Mission mission)
+        public async Task<ActionResult<RequestResult<int>>> UpdateMission([FromBody] MissionDto mission)
         {
             var cmd = new UpdateMission_Command(_context, mission);
             return await cmd.ExecuteAsync();
@@ -72,9 +73,9 @@ namespace PlanetaryExplorationLogs.API.Controllers
 
         // POST: api/mission/{missionId}/discovery
         [HttpPost("{missionId}/discovery")]
-        public async Task<ActionResult<RequestResult<int>>> CreateDiscoveryForMission(int missionId, [FromBody] DiscoveryFormDto discovery)
+        public async Task<ActionResult<RequestResult<int>>> CreateDiscoveryForMission([FromBody] DiscoveryFormDto discovery)
         {
-            var cmd = new AddDiscoveryForMission_Command(_context, missionId, discovery);
+            var cmd = new AddDiscoveryForMission_Command(_context, discovery);
             return await cmd.ExecuteAsync();
         }
 

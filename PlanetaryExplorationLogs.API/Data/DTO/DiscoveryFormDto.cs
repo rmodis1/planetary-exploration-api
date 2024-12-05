@@ -4,6 +4,8 @@ using PlanetaryExplorationLogs.API.Data.Models;
 namespace PlanetaryExplorationLogs.API.Data.DTO;
 public class DiscoveryFormDto
     {
+        [Key]
+        public int Id { get; set; }   
 
         [Required]
         public int MissionId { get; set; }
@@ -21,7 +23,7 @@ public class DiscoveryFormDto
         [StringLength(200)]
         public string Location { get; set; } = "";
 
-        public virtual Mission Mission { get; set; } = null!;
+        // public virtual Mission Mission { get; set; } = null!;
         
-        public virtual DiscoveryType DiscoveryType { get; set; } = null!;
+        // public virtual DiscoveryType DiscoveryType { get; set; } = null!;
 }

@@ -1,10 +1,10 @@
-// The handler class is responsible for executing the query
 using Microsoft.EntityFrameworkCore;
 using PlanetaryExplorationLogs.API.Data.Context;
 using PlanetaryExplorationLogs.API.Data.DTO;
 using PlanetaryExplorationLogs.API.Utility.Patterns;
 using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
 
+namespace PlanetaryExplorationLogs.API.Requests.Queries.Discoveries.GetDiscovery;
 public class GetDiscovery_Handler : HandlerBase<DiscoveryFormDto>
 {
     private readonly int _discoveryId;
@@ -24,11 +24,8 @@ public class GetDiscovery_Handler : HandlerBase<DiscoveryFormDto>
                 Name = u.Name,
                 Description = u.Description,
                 MissionId = u.MissionId,
-                Mission = u.Mission,
                 Location = u.Location,
-                DiscoveryType = u.DiscoveryType,
-                DiscoveryTypeId = u.DiscoveryTypeId,
-
+                DiscoveryTypeId = u.DiscoveryTypeId
             })
             .FirstAsync();
 

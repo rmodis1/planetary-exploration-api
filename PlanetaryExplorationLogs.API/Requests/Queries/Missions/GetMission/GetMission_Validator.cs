@@ -1,5 +1,3 @@
-
-// The validator class is responsible for validating things before the query is executed
 using System.Net;
 using PlanetaryExplorationLogs.API.Data.Context;
 using PlanetaryExplorationLogs.API.Utility.Patterns;

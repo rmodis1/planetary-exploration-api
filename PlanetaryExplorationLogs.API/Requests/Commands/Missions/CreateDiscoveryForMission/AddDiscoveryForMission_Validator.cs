@@ -4,16 +4,16 @@ using PlanetaryExplorationLogs.API.Utility.Patterns;
 using System.Net;
 using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
 
-// The validator class is responsible for validating things before the query is executed
+namespace PlanetaryExplorationLogs.API.Requests.Commands.Missions.CreateDiscoveryForMission;
+
 public class AddDiscoveryForMission_Validator : ValidatorBase
 {
     private readonly DiscoveryFormDto _discovery;
     private readonly int _missionId;
 
-    public AddDiscoveryForMission_Validator(PlanetExplorationDbContext context, int missionId, DiscoveryFormDto discovery)
+    public AddDiscoveryForMission_Validator(PlanetExplorationDbContext context, DiscoveryFormDto discovery)
         : base(context)
     {
-        _missionId = missionId;
         _discovery = discovery;
     }
 
@@ -28,7 +28,7 @@ public class AddDiscoveryForMission_Validator : ValidatorBase
                 "You must provide some discovery to add.");
         }
 
-        if (_missionId <= 0)
+        if (_discovery.MissionId <= 0)
         {
             return await InvalidResultAsync(
                 HttpStatusCode.BadRequest,

@@ -1,8 +1,8 @@
-
-// The handler class is responsible for executing the query
 using PlanetaryExplorationLogs.API.Data.Context;
 using PlanetaryExplorationLogs.API.Utility.Patterns;
 using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
+
+namespace PlanetaryExplorationLogs.API.Requests.Commands.Discoveries.DeleteDiscovery;
 
 public class DeleteDiscovery_Handler : HandlerBase<int>
 {

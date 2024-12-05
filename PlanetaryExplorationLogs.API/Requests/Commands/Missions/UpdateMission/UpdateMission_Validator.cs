@@ -1,17 +1,18 @@
 // The validator class is responsible for validating things before the query is executed
 using System.Net;
 using PlanetaryExplorationLogs.API.Data.Context;
+using PlanetaryExplorationLogs.API.Data.DTO;
 using PlanetaryExplorationLogs.API.Data.Models;
 using PlanetaryExplorationLogs.API.Utility.Patterns;
 using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
 
 namespace PlanetaryExplorationLogs.API.Requests.Commands.Missions.UpdateMission;
 
-public class classname_Validator : ValidatorBase
+public class UpdateMission_Validator : ValidatorBase
 {
-    private readonly Mission _mission;
+    private readonly MissionDto _mission;
 
-    public classname_Validator(PlanetExplorationDbContext context, Mission mission)
+    public UpdateMission_Validator(PlanetExplorationDbContext context, MissionDto mission)
         : base(context)
     {
         _mission = mission;

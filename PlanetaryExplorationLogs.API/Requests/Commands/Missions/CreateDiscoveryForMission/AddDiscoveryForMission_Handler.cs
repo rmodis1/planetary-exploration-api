@@ -5,24 +5,24 @@ using PlanetaryExplorationLogs.API.Utility.Patterns;
 using System.Net;
 using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
 
-// The handler class is responsible for executing the query
+namespace PlanetaryExplorationLogs.API.Requests.Commands.Missions.CreateDiscoveryForMission;
+
 public class AddDiscoveryForMission_Handler : HandlerBase<int>
 {
     private readonly DiscoveryFormDto _discovery;
     private readonly int _missionId;
 
-    public AddDiscoveryForMission_Handler(PlanetExplorationDbContext context, int missionId, DiscoveryFormDto discovery)
+    public AddDiscoveryForMission_Handler(PlanetExplorationDbContext context, DiscoveryFormDto discovery)
         : base(context)
     {
         _discovery = discovery;
-        _missionId = missionId;
     }
 
     public override async Task<RequestResult<int>> HandleAsync()
     {
         var newDiscovery = new Discovery
         {
-            MissionId = _missionId,
+            MissionId = _discovery.MissionId,
             Name = _discovery.Name,
             DiscoveryTypeId = _discovery.DiscoveryTypeId,
             Description = _discovery.Description,

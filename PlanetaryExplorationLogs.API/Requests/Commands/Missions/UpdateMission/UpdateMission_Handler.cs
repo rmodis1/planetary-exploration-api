@@ -2,17 +2,18 @@
 // The handler class is responsible for executing the query
 using System.Net;
 using PlanetaryExplorationLogs.API.Data.Context;
+using PlanetaryExplorationLogs.API.Data.DTO;
 using PlanetaryExplorationLogs.API.Data.Models;
 using PlanetaryExplorationLogs.API.Utility.Patterns;
 using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
 
 namespace PlanetaryExplorationLogs.API.Requests.Commands.Missions.UpdateMission;
 
-public class classname_Handler : HandlerBase<int>
+public class UpdateMission_Handler : HandlerBase<int>
 {
-    private readonly Mission _mission;
+    private readonly MissionDto _mission;
 
-    public classname_Handler(PlanetExplorationDbContext context, Mission mission)
+    public UpdateMission_Handler(PlanetExplorationDbContext context, MissionDto mission)
         : base(context)
     {
         _mission = mission;

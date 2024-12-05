@@ -6,6 +6,8 @@ using PlanetaryExplorationLogs.API.Data.Context;
 using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
 using PlanetaryExplorationLogs.API.Data.Models;
 
+namespace PlanetaryExplorationLogs.API.Requests.Queries.Planets.GetPlanet;
+
 public class GetPlanet_Query : RequestBase<Planet>
 {
     private readonly int _planetId;

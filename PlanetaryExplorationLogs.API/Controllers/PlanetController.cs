@@ -5,6 +5,7 @@ using PlanetaryExplorationLogs.API.Data.Models;
 using PlanetaryExplorationLogs.API.Requests.Commands.Planets;
 using PlanetaryExplorationLogs.API.Requests.Commands.Planets.DeletePlanet;
 using PlanetaryExplorationLogs.API.Requests.Commands.Planets.UpdatePlanet;
+using PlanetaryExplorationLogs.API.Requests.Queries.Planets.GetPlanet;
 using PlanetaryExplorationLogs.API.Requests.Queries.Planets.GetPlanetsDropdownList;
 using PlanetaryExplorationLogs.API.Utility.Patterns;
 

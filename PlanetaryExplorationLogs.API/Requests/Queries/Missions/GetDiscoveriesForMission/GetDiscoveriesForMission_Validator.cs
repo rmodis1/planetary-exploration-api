@@ -1,4 +1,3 @@
-using Microsoft.EntityFrameworkCore;
 using PlanetaryExplorationLogs.API.Utility.Patterns;
 using System.Net;
 using PlanetaryExplorationLogs.API.Data.Context;
@@ -6,7 +5,6 @@ using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
 
 namespace PlanetaryExplorationLogs.API.Requests.Queries.Missions.GetDiscoveriesForMission;
 
-// The validator class is responsible for validating things before the query is executed
 public class GetDiscoveriesForMission_Validator : ValidatorBase
 {
     private readonly int _missionId;

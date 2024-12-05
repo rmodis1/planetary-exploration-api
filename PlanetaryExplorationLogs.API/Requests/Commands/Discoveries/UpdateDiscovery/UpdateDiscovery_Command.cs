@@ -1,19 +1,13 @@
-//// Paste these using statements at the top of the file and uncomment them
-//using PlanetaryExplorationLogs.API.Data.Context;
-//using PlanetaryExplorationLogs.API.Utility.Patterns;
-//using System.Net;
-//using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
-
 using PlanetaryExplorationLogs.API.Data.Context;
-using PlanetaryExplorationLogs.API.Data.Models;
+using PlanetaryExplorationLogs.API.Data.DTO;
 using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
 
 namespace PlanetaryExplorationLogs.API.Requests.Commands.Discoveries.UpdateDiscovery;
 public class UpdateDiscovery_Command : RequestBase<int>
 {
-    private readonly Discovery _discovery;
+    private readonly DiscoveryFormDto _discovery;
 
-    public UpdateDiscovery_Command(PlanetExplorationDbContext context, Discovery discovery)
+    public UpdateDiscovery_Command(PlanetExplorationDbContext context, DiscoveryFormDto discovery)
         : base(context)
     {
         _discovery = discovery;

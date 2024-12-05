@@ -1,12 +1,9 @@
 using PlanetaryExplorationLogs.API.Data.Context;
 using PlanetaryExplorationLogs.API.Utility.Patterns;
-using System.Net;
 using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
-
 
 namespace PlanetaryExplorationLogs.API.Requests.Commands.Missions.DeleteMission;
 
-// The handler class is responsible for executing the query
 public class DeleteMission_Handler : HandlerBase<int>
 {
     private readonly int _missionId;
