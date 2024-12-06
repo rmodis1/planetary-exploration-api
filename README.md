@@ -22,6 +22,7 @@ PlanetaryExplorationLogs.API/
 ├── PlanetaryExplorationLogs.API.csproj
 ├── Program.cs
 └── Instructions.md
+```
 
 ## Getting Started
 
