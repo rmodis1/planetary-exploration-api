@@ -6,6 +6,7 @@ The Planetary Exploration Logs API is a .NET Core Web API designed to manage and
 
 ## Project Structure
 
+```tree
 PlanetaryExplorationLogs.API/
 ├── Controllers/
 │   ├── DiscoveryController.cs
@@ -21,7 +22,6 @@ PlanetaryExplorationLogs.API/
 ├── PlanetaryExplorationLogs.API.csproj
 ├── Program.cs
 └── Instructions.md
-
 
 ## Getting Started
 
