@@ -79,23 +79,15 @@ Swagger UI is available at `/swagger` for exploring and testing the API endpoint
 
 ## Development
 
-### Code Snippets
-
-The project includes Visual Studio snippet files for easy template creation. Use `query` and `command` shortcuts followed by the **TAB** key to generate CRQS Queries and Commands templates.
-
-To install snippets in Visual Studio:
-1. Click *Tools -> Code Snippets Manager*
-2. Click the *Import* button
-3. Navigate to the project's `\PlanetaryExplorationLogs.API\Utility\Snippets` folder and select all three snippets
-4. Click the *Finish* button
-
 ### Migrations
 
 To add a new migration:
     ```sh
-dotnet ef migrations add <MigrationName>
+    dotnet ef migrations add <MigrationName>
+    ```
 
 To update the database:
     ```sh
-dotnet ef database update
+    dotnet ef database update
+    ```
 
