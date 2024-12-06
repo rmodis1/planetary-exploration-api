@@ -6,7 +6,21 @@ The Planetary Exploration Logs API is a .NET Core Web API designed to manage and
 
 ## Project Structure
 
-PlanetaryExplorationLogs.API ├── Controllers/ │ ├── DiscoveryController.cs │ ├── MissionController.cs │ ├── PlanetController.cs ├── Data/ ├── Migrations/ ├── Properties/ ├── Requests/ ├── Utility/ ├── appsettings.Development.json ├── appsettings.json ├── PlanetaryExplorationLogs.API.csproj ├── Program.cs ├── Instructions.md
+PlanetaryExplorationLogs.API/
+├── Controllers/
+│   ├── DiscoveryController.cs
+│   ├── MissionController.cs
+│   └── PlanetController.cs
+├── Data/
+├── Migrations/
+├── Properties/
+├── Requests/
+├── Utility/
+├── appsettings.Development.json
+├── appsettings.json
+├── PlanetaryExplorationLogs.API.csproj
+├── Program.cs
+└── Instructions.md
 
 
 ## Getting Started
@@ -77,17 +91,5 @@ Swagger UI is available at `/swagger` for exploring and testing the API endpoint
 - **POST** `api/planet`: Create a new planet.
 - **PUT** `api/planet`: Update an existing planet.
 
-## Development
 
-### Migrations
-
-To add a new migration:
-    ```sh
-    dotnet ef migrations add <MigrationName>
-    ```
-
-To update the database:
-    ```sh
-    dotnet ef database update
-    ```
 
