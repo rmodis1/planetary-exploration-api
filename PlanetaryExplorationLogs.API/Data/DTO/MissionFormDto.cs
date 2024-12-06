@@ -18,10 +18,5 @@ namespace PlanetaryExplorationLogs.API.Data.DTO
 
         [StringLength(500)]
         public string Description { get; set; } = "";
-
-        // [ForeignKey("PlanetId")]
-        // public virtual Planet Planet { get; set; } = null!;
-
-        // public virtual List<Discovery> Discoveries { get; set; } = [];
     }
 }

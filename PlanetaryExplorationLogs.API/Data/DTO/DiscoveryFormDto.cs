@@ -22,8 +22,4 @@ public class DiscoveryFormDto
 
         [StringLength(200)]
         public string Location { get; set; } = "";
-
-        // public virtual Mission Mission { get; set; } = null!;
-        
-        // public virtual DiscoveryType DiscoveryType { get; set; } = null!;
 }

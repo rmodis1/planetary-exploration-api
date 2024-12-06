@@ -44,6 +44,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+//Added to allow the API to accept requests from the Angular app
 app.UseCors();
 
 app.UseHttpsRedirection();
