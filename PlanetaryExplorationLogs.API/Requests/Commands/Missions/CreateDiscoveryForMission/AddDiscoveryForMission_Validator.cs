@@ -9,7 +9,6 @@ namespace PlanetaryExplorationLogs.API.Requests.Commands.Missions.CreateDiscover
 public class AddDiscoveryForMission_Validator : ValidatorBase
 {
     private readonly DiscoveryFormDto _discovery;
-    private readonly int _missionId;
 
     public AddDiscoveryForMission_Validator(PlanetExplorationDbContext context, DiscoveryFormDto discovery)
         : base(context)

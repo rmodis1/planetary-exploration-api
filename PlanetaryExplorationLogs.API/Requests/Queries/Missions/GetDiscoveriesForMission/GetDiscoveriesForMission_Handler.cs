@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using PlanetaryExplorationLogs.API.Utility.Patterns;
-using System.Net;
 using PlanetaryExplorationLogs.API.Data.Context;
 using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
 using PlanetaryExplorationLogs.API.Data.Models;

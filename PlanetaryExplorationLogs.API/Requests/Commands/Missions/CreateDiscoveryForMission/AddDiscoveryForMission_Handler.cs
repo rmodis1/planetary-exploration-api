@@ -10,7 +10,6 @@ namespace PlanetaryExplorationLogs.API.Requests.Commands.Missions.CreateDiscover
 public class AddDiscoveryForMission_Handler : HandlerBase<int>
 {
     private readonly DiscoveryFormDto _discovery;
-    private readonly int _missionId;
 
     public AddDiscoveryForMission_Handler(PlanetExplorationDbContext context, DiscoveryFormDto discovery)
         : base(context)

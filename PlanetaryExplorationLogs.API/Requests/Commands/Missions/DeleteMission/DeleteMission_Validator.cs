@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PlanetaryExplorationLogs.API.Data.Context;
 using PlanetaryExplorationLogs.API.Utility.Patterns;
-using SQLitePCL;
 using System.Net;
 using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
 

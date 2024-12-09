@@ -25,7 +25,7 @@ namespace PlanetaryExplorationLogs.API.Requests.Commands.Planets.DeletePlanet
 
             var result = new RequestResult<int>
             {
-                Data = 0
+                Data = planet != null ? 0 : -1
             };
 
             return result;

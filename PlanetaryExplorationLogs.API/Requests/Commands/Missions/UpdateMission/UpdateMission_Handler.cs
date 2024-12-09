@@ -1,9 +1,6 @@
-
-// The handler class is responsible for executing the query
 using System.Net;
 using PlanetaryExplorationLogs.API.Data.Context;
 using PlanetaryExplorationLogs.API.Data.DTO;
-using PlanetaryExplorationLogs.API.Data.Models;
 using PlanetaryExplorationLogs.API.Utility.Patterns;
 using static PlanetaryExplorationLogs.API.Utility.Patterns.CommandQuery;
 
@@ -34,7 +31,7 @@ public class UpdateMission_Handler : HandlerBase<int>
         var result = new RequestResult<int>
         {
             Data = updatedMission?.Id ?? -1,
-            StatusCode = HttpStatusCode.OK
+            StatusCode = updatedMission != null ? HttpStatusCode.OK : HttpStatusCode.NotFound
         };
 
         return result;

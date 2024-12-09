@@ -33,7 +33,7 @@ namespace PlanetaryExplorationLogs.API.Requests.Commands.Planets.UpdatePlanet
             var result = new RequestResult<int>
 			{
 				Data = updatedPlanet?.Id ?? -1,
-				StatusCode = HttpStatusCode.OK
+				StatusCode = updatedPlanet!= null ? HttpStatusCode.OK : HttpStatusCode.NotFound
 			};
 
 			return result;
